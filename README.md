@@ -1,5 +1,5 @@
 # Phase1-Team9
-What is the OTR brings to you?
+What does the OTR bring to you?
 A process, a feeling, an enjoyable life, and you can really see the difference you make.
 
 The name of our project is called OTR, that means on the road. Its purpose is to encourage people to walk more. 
