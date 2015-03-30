@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:id="@+id/id_main_container"
+        android:background="@drawable/steps_anim">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_step_num"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/steps"
+            android:id="@+id/id_steps"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            android:background="@drawable/button_unclik_style"
+            android:textStyle="bold" />
+
+        <View android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="#00FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/drawing"
+            android:id="@+id/id_drawing"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            android:background="@drawable/button_unclik_style"
+            android:textStyle="bold" />
+
+        <View android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="#00FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/gain"
+            android:id="@+id/id_gain"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            android:background="@drawable/button_unclik_style"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>
