@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.util.StepDetector;
+import com.example.util.Steps;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -105,6 +108,8 @@ public class StepsFragment extends Fragment {
             FragmentTransaction ft = fm.beginTransaction();
             ft.remove(WeekFragment.getInstance());
             ft.commit();
+
+            Steps.STEPS = StepDetector.CURRENT_SETP;
         }
         if(isMonthClicked){
             FragmentTransaction ft = fm.beginTransaction();
@@ -135,6 +140,8 @@ public class StepsFragment extends Fragment {
                 week.setBackgroundResource(R.drawable.button_clik_style);
                 month.setBackgroundResource(R.drawable.button_unclik_style);
                 total.setBackgroundResource(R.drawable.button_unclik_style);
+
+                Steps.STEPS = StepDetector.CURRENT_SETP;
             }
         }
     };
