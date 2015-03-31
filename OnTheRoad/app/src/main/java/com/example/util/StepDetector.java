@@ -1,10 +1,14 @@
 package com.example.util;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class StepDetector implements SensorEventListener {
@@ -16,6 +20,8 @@ public class StepDetector implements SensorEventListener {
     private float mYOffset;
     private static long end = 0;
     private static long start = 0;
+    private SharedPreferences savedSearches;
+    private static final String SEARCHES = "steps_per_day";
     /**
      * 最后加速度方向
      */
@@ -35,6 +41,7 @@ public class StepDetector implements SensorEventListener {
         mYOffset = h * 0.5f;
         mScale[0] = -(h * 0.5f * (1.0f / (SensorManager.STANDARD_GRAVITY * 2)));
         mScale[1] = -(h * 0.5f * (1.0f / (SensorManager.MAGNETIC_FIELD_EARTH_MAX)));
+        savedSearches = context.getSharedPreferences(SEARCHES, context.MODE_PRIVATE);
     }
 
     //当传感器检测到的数值发生变化时就会调用这个方法
@@ -74,6 +81,12 @@ public class StepDetector implements SensorEventListener {
                                 CURRENT_SETP++;
                                 mLastMatch = extType;
                                 start = end;
+
+                                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
+                                SharedPreferences.Editor preferencesEditor = savedSearches.edit();
+                                int steps = Integer.valueOf(savedSearches.getString(df.format(new Date()), "0"));
+                                preferencesEditor.putString(df.format(new Date()), String.valueOf(steps + 1));
+                                preferencesEditor.apply(); // store the updated preferences
                             }
                         } else {
                             mLastMatch = -1;

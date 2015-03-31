@@ -15,5 +15,6 @@
     <string name="show">Show</string>
     <string name="charity">Charity</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="date">Date</string>
+    <string name="steps_per_day">Per Day</string>
 </resources>

@@ -78,5 +78,22 @@
             android:gravity="center"
             android:background="@drawable/button_unclik_style"
             android:textStyle="bold" />
+
+        <View android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:background="#00FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/steps_per_day"
+            android:id="@+id/id_steps_per_day"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            android:background="@drawable/button_unclik_style"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

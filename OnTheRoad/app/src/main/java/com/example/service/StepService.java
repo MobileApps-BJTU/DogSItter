@@ -3,6 +3,7 @@ package com.example.service;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.IBinder;
@@ -13,6 +14,7 @@ public class StepService extends Service {
     public static Boolean flag = false;
     private SensorManager sensorManager;
     private StepDetector stepDetector;
+
 
     @Override
     public IBinder onBind(Intent arg0) {

@@ -4,6 +4,7 @@ package com.example.ontheroad;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
@@ -20,6 +21,9 @@ import com.example.interfaces.OnFragmentInteractionListener;
 import com.example.service.StepService;
 import com.example.util.StepDetector;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +31,7 @@ import com.example.util.StepDetector;
 public class MainFragment extends Fragment {
 
     private View rootView;
-    private TextView steps, drawing, gain, stepNum;
+    private TextView steps, drawing, gain, stepNum, steps_per_day;
     private Thread thread;
 
     private static MainFragment mInstance;
@@ -38,8 +42,7 @@ public class MainFragment extends Fragment {
     private AnimationDrawable anim;
     private int timesToStop = 10;
     private int currentSteps = 0;
-
-//    private boolean isStepsClicked = true;
+    //    private boolean isStepsClicked = true;
 //    private boolean isDrawingClicked = true;
 //    private boolean isGainClicked = true;
 
@@ -93,6 +96,7 @@ public class MainFragment extends Fragment {
             steps = (TextView)rootView.findViewById(R.id.id_steps);
             drawing = (TextView)rootView.findViewById(R.id.id_drawing);
             gain = (TextView)rootView.findViewById(R.id.id_gain);
+            steps_per_day = (TextView)rootView.findViewById(R.id.id_steps_per_day);
 
             stepNum = (TextView)rootView.findViewById(R.id.id_step_num);
 
@@ -101,10 +105,12 @@ public class MainFragment extends Fragment {
             steps.setTypeface(typeFace, Typeface.BOLD);
             drawing.setTypeface(typeFace, Typeface.BOLD);
             gain.setTypeface(typeFace, Typeface.BOLD);
+            steps_per_day.setTypeface(typeFace, Typeface.BOLD);
 
             steps.setOnClickListener(stepsListener);
             drawing.setOnClickListener(drawingListener);
             gain.setOnClickListener(gainListener);
+            steps_per_day.setOnClickListener(stepsPerDayListener);
 
             container = (LinearLayout)rootView.findViewById(R.id.id_main_container);
             anim = (AnimationDrawable)container.getBackground();
@@ -225,6 +231,14 @@ public class MainFragment extends Fragment {
 //                drawing.setBackgroundResource(R.drawable.button_unclik_style);
 //                gain.setBackgroundResource(R.drawable.button_clik_style);
 //            }
+        }
+    };
+
+    private View.OnClickListener stepsPerDayListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            mListener.onStepsPerDayShow();
         }
     };
 }

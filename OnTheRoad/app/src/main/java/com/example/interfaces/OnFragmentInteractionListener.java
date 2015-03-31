@@ -7,4 +7,6 @@ public interface OnFragmentInteractionListener {
     public void onDrawingClicked();
 
     public void onGainClicked();
+
+    public void onStepsPerDayShow();
 }

@@ -3,6 +3,7 @@ package com.example.ontheroad;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,8 @@ import com.example.interfaces.OnFragmentInteractionListener;
 public class MainActivity extends Activity implements OnFragmentInteractionListener {
 
     private FragmentManager fm;
+    private SharedPreferences savedSearches;
+    private static final String SEARCHES = "steps_per_day";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,7 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
         setContentView(R.layout.activity_main);
 
         fm = getFragmentManager();
+        savedSearches = getSharedPreferences(SEARCHES, MODE_PRIVATE);
 
         FragmentTransaction ft = fm.beginTransaction();
         ft.add(R.id.id_container, MainFragment.getInstance())
@@ -69,6 +73,15 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     public void onGainClicked() {
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.id_container, GainFragment.getInstance())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void onStepsPerDayShow() {
+        StepsPerDayFragment.getInstance().setSavedSearches(savedSearches);
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.id_container, StepsPerDayFragment.getInstance())
                 .addToBackStack(null)
                 .commit();
     }
