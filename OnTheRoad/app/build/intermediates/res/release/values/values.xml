@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/F:/new/OnTheRoad/OnTheRoad/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/F:/new/OnTheRoad/OnTheRoad/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">OTR</string>
+    <string name="charity">Charity</string>
+    <string name="color">Color</string>
+    <string name="date">Date</string>
+    <string name="drawing">Drawing</string>
+    <string name="gain">Gain</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="month">Month</string>
+    <string name="show">Show</string>
+    <string name="steps">Steps</string>
+    <string name="steps_per_day">Per Day</string>
+    <string name="total">Total</string>
+    <string name="variety">Variety</string>
+    <string name="week">Week</string>
+    <!-- From: file:/F:/new/OnTheRoad/OnTheRoad/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar" type="text/css">
+        <item name="android:windowBackground">@drawable/ready</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
