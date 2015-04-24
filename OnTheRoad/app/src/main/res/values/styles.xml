@@ -1,0 +1,9 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar" type = "text/css">
+        <item name="android:windowBackground">@drawable/ready</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+</resources>

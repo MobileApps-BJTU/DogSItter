@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">在路上</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">设置</string>
+    <string name="steps">步数</string>
+    <string name="drawing">绘图</string>
+    <string name="gain">成就</string>
+    <string name="week">每周</string>
+    <string name="month">每月</string>
+    <string name="total">总步数</string>
+    <string name="variety">树种</string>
+    <string name="color">颜色</string>
+    <string name="show">我的树</string>
+    <string name="charity">捐赠</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="date">日期</string>
+    <string name="steps_per_day">每日步数</string>
+</resources>
